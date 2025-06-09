@@ -175,3 +175,9 @@ kubectl apply -f rq5.yaml
 ```
 kubectl delete ns ns1
 ```
+quota
+
+Error from server (Forbidden): error when creating "rq5.yaml": pods "pod6" is forbidden: exceeded quota: rs-quota3, requested: limits.cpu=2,limits.memory=1600Mi,requests.cpu=800m,requests.memory=1600Mi, used: limits.cpu=1,limits.memory=800Mi,requests.cpu=350m,requests.memory=600Mi, limited: limits.cpu=2,limits.memory=2Gi,requests.cpu=1,requests.memory=1Gi
+
+
+host port pod port
