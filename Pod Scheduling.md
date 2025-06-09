@@ -297,3 +297,13 @@ kubectl apply -f  pod-antiaff.yaml
 ```
 kubectl get pod -o wide 
 ```
+ssh-keygen -t rsa -b 4096 -C "k8s-master" -f ~/.ssh/id_rsa
+ 
+
+ssh-copy-id user@node1
+Replace user with the actual username on node1
+ 
+cat ~/.ssh/id_rsa.pub | ssh user@node1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+ 
+
+ssh user@node1
