@@ -13,7 +13,7 @@ Create pod in first namespace
 ```
 kubectl -n ns1 run ns1-pod --image nginx
 
-or
+or ping 
 apiVersion: v1
 kind: Pod
 metadata:
