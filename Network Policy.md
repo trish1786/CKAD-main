@@ -227,3 +227,18 @@ It can access the IP as it is enabled by the Egress Policy
 curl https://yahoo.com
 ```
 It is not able to access other than mentioned in the EgressPolicy
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ns1-pod
+  namespace: ns1
+spec:
+  containers:
+  - name: ctr1
+    image: alpine
+    command: ["sleep", "infinity"]
+    securityContext:
+      capabilities:
+        add: ["NET_RAW"]
