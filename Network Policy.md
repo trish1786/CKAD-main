@@ -12,6 +12,8 @@ kubectl create ns ns2
 Create pod in first namespace
 ```
 kubectl -n ns1 run ns1-pod --image nginx
+
+or
 apiVersion: v1
 kind: Pod
 metadata:
