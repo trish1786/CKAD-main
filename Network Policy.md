@@ -5,6 +5,7 @@ Create 2 namespaces
 ```
 kubectl create ns ns1
 ```
+
 ```
 kubectl create ns ns2
 ```
@@ -12,6 +13,19 @@ Create pod in first namespace
 ```
 kubectl -n ns1 run ns1-pod --image nginx 
 ```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ns1-pod
+  namespace: ns1
+spec:
+  containers:
+  - name: ctr1
+    image: alpine
+    command: ["sleep", "infinity"]
+    securityContext:
+      capabilities:
+        add: ["NET_RAW"]
 Create pod in second namespace
 ```
 kubectl -n ns2 run ns2-pod --image nginx 
